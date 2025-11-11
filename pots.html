@@ -1,353 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pots and planters</title>
-    <style>
-         *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pots and Planters</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 
-body {
-  font-family: "Poppins", Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #fff;
-  overflow-x: hidden;
-}
+  <style>
+    /* ---------- RESET ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+      overflow-x: hidden;
+    }
 
-ul {
-  list-style: none;
-}
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-/* ========== HEADER ========== */
-#container {
-  width: 100%;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+    ul {
+      list-style: none;
+    }
 
-#navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 40px;
-}
+    /* ---------- HEADER ---------- */
+    header {
+      width: 100%;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-#navbar .logo img {
-  height: 60px;
-  width: auto;
-}
+    #navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+    }
 
-#navbar_list {
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
+    #navbar .logo img {
+      height: 60px;
+      width: auto;
+    }
 
-#navbar_list li a {
-  font-size: 16px;
-  color: #004d40;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
+    #navbar_list {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      transition: all 0.3s ease;
+    }
 
-#navbar_list li a:hover,
-#navbar_list li a.active {
-  color: #009688;
-}
+    #navbar_list li a {
+      font-size: 16px;
+      color: #004d40;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
 
-#navbar_list i {
-  font-size: 18px;
-  cursor: pointer;
-  color: #004d40;
-}
+    #navbar_list li a:hover,
+    #navbar_list li a.active {
+      color: #009688;
+    }
 
-.hamburger {
-  display: none;
-  cursor: pointer;
-}
+    #navbar_list i {
+      font-size: 18px;
+      cursor: pointer;
+      color: #004d40;
+    }
 
-.hamburger img {
-  width: 30px;
-  height: 30px;
-}
+    /* ---------- HAMBURGER ---------- */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+    }
 
-#menu-toggle {
-  display: none;
-}
+    .hamburger img {
+      width: 28px;
+      height: 28px;
+    }
 
-#button {
-    margin-right: 50px;
-    margin-bottom: 20px;
-    margin-left: 50px;
-}
+    #menu-toggle {
+      display: none;
+    }
 
-#button h2 {
-    /* display: inline-block; */
-    margin-right: 20px;
-    font-size: 24px;
-    margin-top: 20px;
+    /* ---------- HERO SECTION ---------- */
+    #herosection .hero_child img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      margin-top: 10px;
+    }
 
-}
+    /* ---------- FILTER SECTION ---------- */
+    #button {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 30px 50px;
+      flex-wrap: wrap;
+    }
 
-#button button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: rgb(0, 0, 0);
-    border: 2px solid black;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    width: 100px;
-}
+    #button h2 {
+      font-size: 24px;
+      color: #004d40;
+    }
 
-#herosection .hero_child img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    margin-top: 10px;
-}
+    #button button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: black;
+      border: 2px solid black;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
 
-#button {
-    margin-right: 50px;
-    margin-bottom: 20px;
-    margin-left: 50px;
-}
+    #button button:hover {
+      background-color: #009688;
+      color: white;
+    }
 
-#pots1 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: white;
-    margin-bottom: 30px;
+    /* ---------- PRODUCT GRID ---------- */
+    #pots1, #pots2, #pots3, #pots4 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin: 40px 20px;
+    }
 
-}
+    .pots11, .pots12, .pots13, .pots14,
+    .pots21, .pots22, .pots23, .pots24,
+    .pots31, .pots32, .pots33, .pots34 {
+      width: 280px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+      text-align: center;
+      padding: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-#pots2 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: white;
-    margin-top: 90px;
-     margin-bottom: 30px;
+    .pots11:hover, .pots12:hover, .pots13:hover, .pots14:hover,
+    .pots21:hover, .pots22:hover, .pots23:hover, .pots24:hover,
+    .pots31:hover, .pots32:hover, .pots33:hover, .pots34:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
 
-}
-#pots3 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: white;
-    margin-top: 90px;
-    margin-bottom: 30px;
+    .pots11 img, .pots12 img, .pots13 img, .pots14 img,
+    .pots21 img, .pots22 img, .pots23 img, .pots24 img,
+    .pots31 img, .pots32 img, .pots33 img, .pots34 img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
 
-}
+    .pots11 h3, .pots12 h3, .pots13 h3, .pots14 h3,
+    .pots21 h3, .pots22 h3, .pots23 h3, .pots24 h3,
+    .pots31 h3, .pots32 h3, .pots33 h3, .pots34 h3 {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #004d40;
+    }
 
-#pots4 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: white;
-    margin-top: 90px;
-     margin-bottom: 30px;
+    .pots11 p, .pots12 p, .pots13 p, .pots14 p,
+    .pots21 p, .pots22 p, .pots23 p, .pots24 p,
+    .pots31 p, .pots32 p, .pots33 p, .pots34 p {
+      font-size: 16px;
+      color: #2e7d32;
+      font-weight: bold;
+    }
 
-}
+    .pots11 button, .pots12 button, .pots13 button, .pots14 button,
+    .pots21 button, .pots22 button, .pots23 button, .pots24 button,
+    .pots31 button, .pots32 button, .pots33 button, .pots34 button {
+      font-size: 15px;
+      margin-top: 10px;
+      color: #fff;
+      width: 80%;
+      height: 35px;
+      background-color: green;
+      border: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+    }
 
-.pots11,
-.pots12,
-.pots13,
-.pots14 {
-    position: relative;
-    width: 300px;
-    height: 400px;
-    border-radius: 10px;
-    margin: 20px;
-    align-items: center;
-    justify-content: center;
-}
+    .pots11 button:hover, .pots12 button:hover, .pots13 button:hover, .pots14 button:hover,
+    .pots21 button:hover, .pots22 button:hover, .pots23 button:hover, .pots24 button:hover,
+    .pots31 button:hover, .pots32 button:hover, .pots33 button:hover, .pots34 button:hover {
+      background-color: #2e7d32;
+    }
 
-.pots11 img,
-.pots12 img,
-.pots13 img,
-.pots14 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.4s ease;
-}
-
-.pots11:hover img,
-.pots12:hover img,
-.pots13:hover img,
-.pots14:hover img {
-    opacity: 0;
-}
-
-.pots11:hover,
-.pots12:hover,
-.pots13:hover,
-.pots14:hover {
-    background: url("images/Dianthus_Mix_Seeds_0.5_gm.jpg") center/cover no-repeat;
-}
-.pots11 p,
-.pots12 p,
-.pots13 p,
-.pots14 p {
-    font-size: 20px;
-    margin-top: 10px;
-    color: rgb(60, 244, 60);
-    align-items: center;
-    justify-content: center;
-}
-
-.pots11 button,
-.pots12 button,
-.pots13 button,
-.pots14 button {
-    font-size: 15px;
-    margin-top: 10px;
-    color: rgb(255, 255, 255);
-    width: 250px;
-    height: 30px;
-    background-color: green;
-    align-items: center;
-    margin-bottom: 50px;
-}
-
-.pots21,
-.pots22,
-.pots23,
-.pots24 {
-    position: relative;
-    width: 300px;
-    height: 400px;
-    border-radius: 10px;
-    margin: 20px;
-    align-items: center;
-    justify-content: center;
-}
-
-.pots21 img,
-.pots22 img,
-.pots23 img,
-.pots24 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.4s ease;
-}
-
-.pots21:hover img,
-.pots22:hover img,
-.pots23:hover img,
-.pots24:hover img {
-    opacity: 0;
-}
-
-.pots21:hover,
-.pots22:hover,
-.pots23:hover,
-.pots24:hover {
-    background: url("images/PDP-19.jpg") center/cover no-repeat;
-}
-.pots21 p,
-.pots22 p,
-.pots23 p,
-.pots24 p {
-    font-size: 20px;
-    margin-top: 10px;
-    color: rgb(60, 244, 60);
-    align-items: center;
-    justify-content: center;
-}
-
-.pots21 button,
-.pots22 button,
-.pots23 button,
-.pots24 button {
-    font-size: 15px;
-    margin-top: 10px;
-    color: rgb(255, 255, 255);
-    width: 250px;
-    height: 30px;
-    background-color: green;
-    align-items: center;
-    margin-bottom: 50px;
-}
-
-.pots31,
-.pots32,
-.pots33,
-.pots34 {
-    position: relative;
-    width: 300px;
-    height: 400px;
-    border-radius: 10px;
-    margin: 20px;
-    align-items: center;
-    justify-content: center;
-}
-
-.pots31 img,
-.pots32 img,
-.pots33 img,
-.pots34 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.4s ease;
-}
-
-.pots31:hover img,
-.pots32:hover img,
-.pots33:hover img,
-.pots34:hover img {
-    opacity: 0;
-}
-
-.pots31:hover,
-.pots32:hover,
-.pots33:hover,
-.pots34:hover {
-    background: url("images/PDP-19.jpg") center/cover no-repeat;
-}
-.pots31 p,
-.pots32 p,
-.pots33 p,
-.pots34 p {
-    font-size: 20px;
-    margin-top: 10px;
-    color: rgb(60, 244, 60);
-    align-items: center;
-    justify-content: center;
-}
-
-.pots31 button,
-.pots32 button,
-.pots33 button,
-.pots34 button {
-    font-size: 15px;
-    margin-top: 10px;
-    color: rgb(255, 255, 255);
-    width: 250px;
-    height: 30px;
-    background-color: green;
-    align-items: center;
-    margin-bottom: 50px;
-}
-
- /* ---------- FOOTER ---------- */
+    /* ---------- FOOTER ---------- */
     footer {
       display: flex;
       flex-wrap: wrap;
@@ -356,7 +214,6 @@ ul {
       padding: 40px 20px;
       font-size: 16px;
       color: #004d40;
-      margin-top: 150px;
     }
 
     footer h4 {
@@ -364,28 +221,79 @@ ul {
       font-size: 18px;
     }
 
-    footer ul {
-      margin: 10px;
-    }
-
-    footer li {
+    footer ul li {
       margin: 5px 0;
-      cursor: pointer;
     }
 
     footer i {
       font-size: 22px;
       margin-right: 10px;
       color: #004d40;
-      cursor: pointer;
     }
 
+    /* ---------- MEDIA QUERIES ---------- */
+    /* Tablet view */
+    @media screen and (max-width: 1024px) {
+      .hamburger {
+        display: block;
+      }
 
-    </style>
+      #navbar_list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: white;
+        width: 100%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 15px 0;
+      }
+
+      #menu-toggle:checked + .logo + .hamburger + nav #navbar_list {
+        display: flex;
+      }
+
+      #button {
+        justify-content: center;
+      }
+
+      .pots11, .pots12, .pots13, .pots14,
+      .pots21, .pots22, .pots23, .pots24,
+      .pots31, .pots32, .pots33, .pots34 {
+        width: 45%;
+      }
+    }
+
+    /* Mobile view */
+    @media screen and (max-width: 600px) {
+      #button {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #button button {
+        width: 90%;
+      }
+
+      .pots11, .pots12, .pots13, .pots14,
+      .pots21, .pots22, .pots23, .pots24,
+      .pots31, .pots32, .pots33, .pots34 {
+        width: 90%;
+      }
+
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <section id="container">
-        <header id="container">
+
+  <!-- ---------- HEADER ---------- -->
+  <header>
     <div id="navbar">
       <input type="checkbox" id="menu-toggle" />
       <a href="index.html" class="logo">
@@ -399,122 +307,63 @@ ul {
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="plant.html">Plants</a></li>
           <li><a href="seeds.html">Seeds</a></li>
-          <li><a href="plants_care.html">Plants care</a></li>
-          <li><a href="pots.html">potes</a></li>
+          <li><a href="plants_care.html">Plants Care</a></li>
+          <li><a href="pots.html">Pots</a></li>
           <li><i class="fa-solid fa-magnifying-glass"></i></li>
         </ul>
       </nav>
     </div>
-  </header>
-    </section>
+  </header>
 
-    <section id="herosection">
-        <div class="hero_child">
-            <img src="images/Category_Banner_9fe8204f-c761-425b-8326-d80337b34555.jpg" alt="">
-        </div>
-    </section>
+  <!-- ---------- HERO SECTION ---------- -->
+  <section id="herosection">
+    <div class="hero_child">
+      <img src="images/Category_Banner_9fe8204f-c761-425b-8326-d80337b34555.jpg" alt="">
+    </div>
+  </section>
 
-    <section id="button">
-        <h2>Plants</h2>
-        <button>Filter</button>
-    </section>
-    <section id="pots1">
-        <div class="pots11">
-            <img src="images/DSC_0718.jpg" alt="">
-            <h3>Echoing Eternity Ceramic Planter</h3>
-            <p>1999</p>
-            <button>View product</button>
+  <!-- ---------- FILTER ---------- -->
+  <section id="button">
+    <h2>Pots & Planters</h2>
+    <button>Filter</button>
+  </section>
 
-        </div>
-        <div class="pots12">
-            <img src="images/DSC_2439.jpg" alt="">
-            <h3>Milano planter pot</h3>
-            <p>1999</p>
-            <button>View product</button>
+  <!-- ---------- PRODUCT GRID ---------- -->
+  <section id="pots1">
+    <div class="pots11">
+      <img src="images/DSC_0718.jpg" alt="">
+      <h3>Echoing Eternity Ceramic Planter</h3>
+      <p>₹1999</p>
+      <button>View Product</button>
+    </div>
 
-        </div>
-        <div class="pots13">
-            <img src="images/DSC_6218.jpg" alt="">
-            <h3>Football Ceramic Pot</h3>
-            <p>1999</p>
-            <button>View product</button>
+    <div class="pots12">
+      <img src="images/DSC_2439.jpg" alt="">
+      <h3>Milano Planter Pot</h3>
+      <p>₹1999</p>
+      <button>View Product</button>
+    </div>
 
-        </div>
-        <div class="pots14">
-            <img src="images/DSC_6763.jpg" alt="">
-            <h3>Apple Ceramic Pot </h3>
-            <p>1999</p>
-            <button>View product</button>
+    <div class="pots13">
+      <img src="images/DSC_6218.jpg" alt="">
+      <h3>Football Ceramic Pot</h3>
+      <p>₹1999</p>
+      <button>View Product</button>
+    </div>
 
-        </div>
-    </section>
+    <div class="pots14">
+      <img src="images/DSC_6763.jpg" alt="">
+      <h3>Apple Ceramic Pot</h3>
+      <p>₹1999</p>
+      <button>View Product</button>
+    </div>
+  </section>
 
-    <section id="pots2">
-        <div class="pots21">
-            <img src="images/DSC_0718.jpg" alt="">
-            <h3>Echoing Eternity Ceramic Planter</h3>
-            <p>1999</p>
-            <button>View product</button>
-
-        </div>
-        <div class="pots22">
-            <img src="images/DSC_2439.jpg" alt="">
-            <h3>Milano planter pot</h3>
-            <p>1999</p>
-            <button>View product</button>
-
-        </div>
-        <div class="pots23">
-            <img src="images/DSC_6218.jpg" alt="">
-            <h3>Football Ceramic Pot</h3>
-            <p>1999</p>
-            <button>View product</button>
-
-        </div>
-        <div class="pots24">
-            <img src="images/DSC_6763.jpg" alt="">
-            <h3>Apple Ceramic Pot </h3>
-            <p>1999</p>
-            <button>View product</button>
-
-        </div>
-    </section>
-    <section id="pots3">
-        <div class="pots31">
-            <img src="images/DSC_0718.jpg" alt="">
-            <h3>Echoing Eternity Ceramic Planter</h3>
-            <p>1999</p>
-            <button>View product</button>
-
-        </div>
-        <div class="pots32">
-            <img src="images/DSC_2439.jpg" alt="">
-            <h3>Milano planter pot</h3>
-            <p>1999</p>
-            <button>View product</button>
-
-        </div>
-        <div class="pots33">
-            <img src="images/DSC_6218.jpg" alt="">
-            <h3>Football Ceramic Pot</h3>
-            <p>1999</p>
-            <button>View product</button>
-
-        </div>
-        <div class="pots34">
-            <img src="images/DSC_6763.jpg" alt="">
-            <h3>Apple Ceramic Pot </h3>
-            <p>1999</p>
-            <button>View product</button>
-
-        </div>
-    </section>
-
-    <!-- FOOTER -->
+  <!-- ---------- FOOTER ---------- -->
   <footer>
     <div class="about">
+      <h4>ABOUT US</h4>
       <ul>
-        <h4>ABOUT US</h4>
         <li>Our Story</li>
         <li>Contact Us</li>
         <li>Careers</li>
@@ -523,9 +372,10 @@ ul {
         <li>Garden Services</li>
       </ul>
     </div>
+
     <div class="customer">
+      <h4>CUSTOMER</h4>
       <ul>
-        <h4>CUSTOMER</h4>
         <li>Take the Plant Quiz</li>
         <li>Shipping Policy</li>
         <li>Terms & Conditions</li>
@@ -534,31 +384,33 @@ ul {
         <li>FAQs</li>
       </ul>
     </div>
+
     <div class="rewards">
+      <h4>OFFERS & REWARDS</h4>
       <ul>
-        <h4>OFFERS & REWARDS</h4>
         <li>Plant Parent Rewards Club</li>
         <li>Ugaoo Coupons</li>
       </ul>
     </div>
+
     <div class="touch">
+      <h4>GET IN TOUCH</h4>
       <ul>
-        <h4>GET IN TOUCH</h4>
         <li>WhatsApp: 7004511220</li>
         <li>Call: +91-8574760581</li>
         <li>Email: support@ugaoo.com</li>
       </ul>
     </div>
-    <div class="new">
+
+    <div class="follow">
+      <h4>FOLLOW US</h4>
       <ul>
-        <h4>FOLLOW US</h4>
-        <li><i class="fa-brands fa-square-facebook"></i></li>
-        <li><i class="fa-brands fa-square-instagram"></i></li>
+        <li><i class="fa-brands fa-facebook"></i></li>
+        <li><i class="fa-brands fa-instagram"></i></li>
         <li><i class="fa-brands fa-linkedin"></i></li>
         <li><i class="fa-brands fa-youtube"></i></li>
       </ul>
     </div>
   </footer>
-
 </body>
 </html>
