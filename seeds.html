@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seeds | Ugaoo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <style>
+    /* ---------- GLOBAL RESET ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      color: #333;
+      background-color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* ---------- HEADER / NAVBAR ---------- */
+    header {
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    #navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 40px;
+    }
+
+    .logo img {
+      height: 60px;
+      width: auto;
+    }
+
+    #navbar_list {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    #navbar_list li a {
+      font-size: 16px;
+      color: #004d40;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    #navbar_list li a:hover,
+    #navbar_list li a.active {
+      color: #009688;
+    }
+
+    #navbar_list i {
+      font-size: 18px;
+      cursor: pointer;
+      color: #004d40;
+    }
+
+    /* ---------- HAMBURGER MENU ---------- */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+    }
+
+    .hamburger img {
+      width: 30px;
+      height: 30px;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    /* ---------- HERO SECTION ---------- */
+    #herosection img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      margin-top: 10px;
+    }
+
+    /* ---------- FILTER SECTION ---------- */
+    #button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 30px 50px;
+    }
+
+    #button h2 {
+      font-size: 24px;
+      color: #004d40;
+    }
+
+    #button button {
+      padding: 10px 20px;
+      font-size: 16px;
+      color: black;
+      border: 2px solid black;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100px;
+      transition: all 0.3s ease;
+    }
+
+    #button button:hover {
+      background-color: #009688;
+      color: white;
+    }
+
+    /* ---------- PRODUCT SECTIONS ---------- */
+    .plant-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      background-color: #fff;
+      margin: 50px auto;
+      padding: 10px;
+    }
+
+    .seed-card {
+      width: 260px;
+      height: 380px;
+      border-radius: 10px;
+      text-align: center;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .seed-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: opacity 0.4s ease;
+    }
+
+    .seed-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .seed-card h3 {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #004d40;
+    }
+
+    .seed-card p {
+      font-size: 18px;
+      color: #2e7d32;
+      margin: 5px 0;
+      font-weight: bold;
+    }
+
+    .seed-card button {
+      font-size: 15px;
+      margin-top: 10px;
+      color: #fff;
+      width: 80%;
+      height: 35px;
+      background-color: green;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .seed-card button:hover {
+      background-color: #2e7d32;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      background-color: rgb(122, 207, 144);
+      padding: 40px 20px;
+      font-size: 16px;
+      color: #004d40;
+    }
+
+    footer h4 {
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    footer ul {
+      margin: 10px;
+    }
+
+    footer li {
+      margin: 5px 0;
+      cursor: pointer;
+    }
+
+    footer i {
+      font-size: 22px;
+      margin-right: 10px;
+      color: #004d40;
+      cursor: pointer;
+    }
+
+    /* ---------- RESPONSIVE DESIGN ---------- */
+    @media (max-width: 992px) {
+      #navbar_list {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 60%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+
+      #menu-toggle:checked + .hamburger + nav #navbar_list {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      #button {
+        margin: 20px;
+      }
+
+      .plant-section {
+        gap: 15px;
+        padding: 10px;
+      }
+
+      .seed-card {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #navbar {
+        padding: 10px 20px;
+      }
+
+      .seed-card {
+        width: 90%;
+      }
+
+      #button {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 20px;
+      }
+
+      #button button {
+        margin-top: 10px;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div id="navbar">
+      <input type="checkbox" id="menu-toggle" />
+      <a href="index.html" class="logo">
+        <img src="images/logo (1).png" alt="Logo" />
+      </a>
+      <label for="menu-toggle" class="hamburger">
+        <img src="images/menu.png" alt="Menu" />
+      </label>
+      <nav>
+        <ul id="navbar_list">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="plant.html">Plants</a></li>
+          <li><a href="seeds.html">Seeds</a></li>
+          <li><a href="plants_care.html">Plant Care</a></li>
+          <li><a href="pots.html">Pots</a></li>
+          <li><i class="fa-solid fa-magnifying-glass"></i></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="herosection">
+    <img src="images/summersaleCategory_Banner_04312b46-d6ef-4cff-b168-b66bdabf7eb5.jpg" alt="Hero Banner">
+  </section>
+
+  <!-- FILTER SECTION -->
+  <section id="button">
+    <h2>Seeds Collection</h2>
+    <button>Filter</button>
+  </section>
+
+  <!-- PLANT SECTIONS -->
+  <section class="plant-section">
+    <div class="seed-card">
+      <img src="images/Radish_Seeds.jpeg" alt="">
+      <h3>Radish Seeds</h3>
+      <p>₹199</p>
+      <button>View Product</button>
+    </div>
+    <div class="seed-card">
+      <img src="images/Beetroot_Seeds_2_gm.jpg" alt="">
+      <h3>Beetroot Seeds</h3>
+      <p>₹199</p>
+      <button>View Product</button>
+    </div>
+    <div class="seed-card">
+      <img src="images/Broccoli_Seeds.jpg" alt="">
+      <h3>Broccoli Seeds</h3>
+      <p>₹199</p>
+      <button>View Product</button>
+    </div>
+    <div class="seed-card">
+      <img src="images/Calendula_Seeds.jpeg" alt="">
+      <h3>Calendula Seeds</h3>
+      <p>₹199</p>
+      <button>View Product</button>
+    </div>
+  </section>
+
+  <section class="plant-section">
+    <div class="seed-card">
+      <img src="images/Radish_Seeds.jpeg" alt="">
+      <h3>Radish Seeds</h3>
+      <p>₹199</p>
+      <button>View Product</button>
+    </div>
+    <div class="seed-card">
+      <img src="images/Beetroot_Seeds_2_gm.jpg" alt="">
+      <h3>Beetroot Seeds</h3>
+      <p>₹199</p>
+      <button>View Product</button>
+    </div>
+    <div class="seed-card">
+      <img src="images/Broccoli_Seeds.jpg" alt="">
+      <h3>Broccoli Seeds</h3>
+      <p>₹199</p>
+      <button>View Product</button>
+    </div>
+    <div class="seed-card">
+      <img src="images/Calendula_Seeds.jpeg" alt="">
+      <h3>Calendula Seeds</h3>
+      <p>₹199</p>
+      <button>View Product</button>
+    </div>
+  </section>
+
+  <section class="plant-section">
+    <div class="seed-card">
+      <img src="images/Radish_Seeds.jpeg" alt="">
+      <h3>Radish Seeds</h3>
+      <p>₹199</p>
+      <button>View Product</button>
+    </div>
+    <div class="seed-card">
+      <img src="images/Beetroot_Seeds_2_gm.jpg" alt="">
+      <h3>Beetroot Seeds</h3>
+      <p>₹199</p>
+      <button>View Product</button>
+    </div>
+    <div class="seed-card">
+      <img src="images/Broccoli_Seeds.jpg" alt="">
+      <h3>Broccoli Seeds</h3>
+      <p>₹199</p>
+      <button>View Product</button>
+    </div>
+    <div class="seed-card">
+      <img src="images/Calendula_Seeds.jpeg" alt="">
+      <h3>Calendula Seeds</h3>
+      <p>₹199</p>
+      <button>View Product</button>
+    </div>
+  </section>
+
+  <section class="plant-section">
+    <div class="seed-card">
+      <img src="images/Radish_Seeds.jpeg" alt="">
+      <h3>Radish Seeds</h3>
+      <p>₹199</p>
+      <button>View Product</button>
+    </div>
+    <div class="seed-card">
+      <img src="images/Beetroot_Seeds_2_gm.jpg" alt="">
+      <h3>Beetroot Seeds</h3>
+      <p>₹199</p>
+      <button>View Product</button>
+    </div>
+    <div class="seed-card">
+      <img src="images/Broccoli_Seeds.jpg" alt="">
+      <h3>Broccoli Seeds</h3>
+      <p>₹199</p>
+      <button>View Product</button>
+    </div>
+    <div class="seed-card">
+      <img src="images/Calendula_Seeds.jpeg" alt="">
+      <h3>Calendula Seeds</h3>
+      <p>₹199</p>
+      <button>View Product</button>
+    </div>
+  </section>
+
+  <!-- MORE SECTIONS (you can duplicate and change images/text as needed) -->
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="about">
+      <ul>
+        <h4>ABOUT US</h4>
+        <li>Our Story</li>
+        <li>Contact Us</li>
+        <li>Careers</li>
+        <li>Locate Stores</li>
+        <li>Own Grown</li>
+        <li>Garden Services</li>
+      </ul>
+    </div>
+    <div class="customer">
+      <ul>
+        <h4>CUSTOMER</h4>
+        <li>Take the Plant Quiz</li>
+        <li>Shipping Policy</li>
+        <li>Terms & Conditions</li>
+        <li>Privacy Policy</li>
+        <li>Track Order</li>
+        <li>FAQs</li>
+      </ul>
+    </div>
+    <div class="rewards">
+      <ul>
+        <h4>OFFERS & REWARDS</h4>
+        <li>Plant Parent Rewards Club</li>
+        <li>Ugaoo Coupons</li>
+      </ul>
+    </div>
+    <div class="touch">
+      <ul>
+        <h4>GET IN TOUCH</h4>
+        <li>WhatsApp: 7004511220</li>
+        <li>Call: +91-8574760581</li>
+        <li>Email: support@ugaoo.com</li>
+      </ul>
+    </div>
+    <div class="new">
+      <ul>
+        <h4>FOLLOW US</h4>
+        <li><i class="fa-brands fa-square-facebook"></i></li>
+        <li><i class="fa-brands fa-square-instagram"></i></li>
+        <li><i class="fa-brands fa-linkedin"></i></li>
+        <li><i class="fa-brands fa-youtube"></i></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
